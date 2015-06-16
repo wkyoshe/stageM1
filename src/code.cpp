@@ -31,11 +31,17 @@ double division (double a, double b)
 
 int main ()
 {
+  int num1, num2;
+ 
+	cout << "Enter a number :\n";
+	cin >> num1; 
+	cout << "Enter another number :\n";
+	cin>> num2;
   int z,r,q,p;
-  z = addition (5,3);
-  q =substruction (5,6);
-  p =multiplication (5,3);
-  r = division (5,0);
+  z = addition (num1,num2);
+  q =substruction (num1,num2);
+  p =multiplication (num1,num2);
+  r = division (num1,num2);
   cout << "a+b = " << z<<endl;
   cout << "a-b = " << q<<endl;
   cout << "a*b = " << p<<endl;
