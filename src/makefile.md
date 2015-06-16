@@ -1,5 +1,5 @@
-code: code.cpp
-  g++ code.cpp - code
+operations: operations.cpp
+  g++ operations.cpp - operations
 
 
 
