@@ -5,7 +5,7 @@
 
 ## My daily work reports.
 
-- [2015-06-10](report/report/2015-06-10.md)
-- [2015-06-11](report/report/2015-06-11.md)
-- [2015-06-12](report/report/2015-06-12.md)
-- [2015-06-15](report/report/2015-06-15.md)
+- [2015-06-10](report/2015-06-10.md)
+- [2015-06-11](report/2015-06-11.md)
+- [2015-06-12](report/2015-06-12.md)
+- [2015-06-15](report/2015-06-15.md)
