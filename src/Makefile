@@ -1,6 +1,7 @@
 code: code.cpp
-      g++ code.cpp
-      ./a.out
+[TA]g++ code.cpp -o code -g$
+clean:
+[TAB]rm code$
 
 
 
