@@ -2,7 +2,8 @@
 #include <operation.hpp>
 using namespace std;
 
-class operation(){
+class operation{
+
 
 //a function that adds two numbers                                                                  
 int addition (int a, int b)
