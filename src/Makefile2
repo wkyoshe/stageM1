@@ -1,0 +1,13 @@
+all: operation
+operation: main.o operation.o
+	   g++ main.o operation.o -o operation 
+
+main.o: main.cpp
+	g++ -c main.cpp
+	
+
+operation.o: operation.cpp
+	     g++ -c code.cpp
+
+clean:
+	rm *o operation
