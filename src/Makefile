@@ -1,7 +1,7 @@
 code: code.cpp
-	g++ code.cpp -o code -g$
+	g++ code.cpp -o code -g
 clean:
-	rm code$
+	rm code
 
 
 
