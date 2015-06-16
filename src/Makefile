@@ -1,4 +1,4 @@
 code: code.cpp
-  g++ code.cpp
-  ./a.out
+      g++ code.cpp
+      ./a.out
 
