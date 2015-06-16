@@ -1,5 +1,4 @@
-operations: operations.cpp
-  g++ operations.cpp - operations
-
-
+code: code.cpp
+ g++ code.cpp
+ ./a.out
 
