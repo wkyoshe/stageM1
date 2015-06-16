@@ -1,2 +1,3 @@
 code: code.cpp
-  g++ code.cpp -o code
+g++ code.cpp 
+./a.out
