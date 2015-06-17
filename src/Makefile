@@ -13,4 +13,4 @@ code: code.cpp
 	g++ code.cpp -o code
 
 clean:
-	rm *o operation
+	rm *o operation code
