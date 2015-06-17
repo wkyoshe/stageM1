@@ -1,21 +1,21 @@
 #include <iostream>
-#include <operation.hpp>
+#include “operation.hpp”
 int main ()
 {
   int num1, num2;
  
-  cout << "Enter a number :\n";
-  cin >> num1; 
-  cout << "Enter another number :\n";
-  cin>> num2;
+  std::cout << "Enter a number :\n";
+  std::cin >> num1; 
+  std::cout << "Enter another number :\n";
+  std::cin>> num2;
   int z,r,q,p;
   z = addition (num1,num2);
   q =substruction (num1,num2);
   p =multiplication (num1,num2);
   r = division (num1,num2);
-  cout << "a+b = " << z<<endl;
-  cout << "a-b = " << q<<endl;
-  cout << "a*b = " << p<<endl;
-  cout << "a/b = " << r<<endl;
+  std::cout << "a+b = " << z<<std::endl;
+  std::cout << "a-b = " << q<<std::endl;
+  std::cout << "a*b = " << p<<std::endl;
+  std::cout << "a/b = " << r<<std::endl;
   return 0;
 }
