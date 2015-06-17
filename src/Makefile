@@ -1,4 +1,3 @@
-
 all: operation code
 operation: main.o operation.o
 	g++ main.o operation.o -o operation 
@@ -12,7 +11,6 @@ operation.o: operation.cpp
 
 code: code.cpp
 	g++ code.cpp -o code
-
 
 clean:
 	rm *o operation
