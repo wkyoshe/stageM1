@@ -1,1 +1,1 @@
-operation();
+Void operation();
