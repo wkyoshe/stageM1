@@ -4,10 +4,9 @@ operation: main.o operation.o
 
 main.o: main.cpp
 	g++ -c main.cpp
-	
 
 operation.o: operation.cpp
-	g++ -c code.cpp
+	g++ -c operation.cpp
 
 code: code.cpp
 	g++ code.cpp -o code
