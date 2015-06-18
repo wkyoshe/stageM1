@@ -11,4 +11,4 @@
 - [2015-06-15](report/2015-06-15.md)
 - [2015-06-16 - makefile  & cmake ](report/2015-06-16.md)
 - [2015-06-17 - makefile  & cmake ](report/2015-06-17.md)
--  [2015-06-18 - CMakeLits.txt & DOXYGEN ](report/2015-06-18.md)
+-  [2015-06-18 - CMakeLists.txt & DOXYGEN ](report/2015-06-18.md)
