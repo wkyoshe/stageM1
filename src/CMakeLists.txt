@@ -23,7 +23,7 @@
 cmake_minimum_required(VERSION 2.8.9 FATAL_ERROR)
 project(operation)
 
-# Create a library called "operationlibo" which includes the source file "operation.cxxp".
+# Create a library called "operationlibo" which includes the source file "operation.cxx".
 # The extension is already found. Any number of sources could be listed here.
 
 add_library(operationlib operation.cpp operation.h)
@@ -41,7 +41,7 @@ target_include_directories (operationlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 add_executable(operation main.cpp)
 
-# Link the executable to the operation library. Since the Hello library has
+# Link the executable to the operation library. Since the operation library has
 # public include directories we will use those link directories when building
 # operation
 #
