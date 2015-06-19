@@ -1,36 +1,73 @@
+/**
+ *MyProgram code
+ *Created on: june 19, 2015
+ *@author kyoshe winstone
+ *
+ */
 #include <iostream>
 using namespace std;
-//a function that adds two numbers                                                                  
-int addition (int a, int b)
+ 
+ //!operation class
+ class operation
+ {
+ public:
+/**
+ *A funtion that adds two numbers
+ *
+ *Returns an double
+ */                                                                         
+int addition (double a, double b)
 {
 
   return (a+b);
 }
-//a function that subsructs two numbers                                                             
-int substruction (int a, int b)
+/**
+ *A fucntion that substructs two numbers
+ *
+ *Returns an double
+ */                                                             
+int substruction (double a, double b)
 {
   return (a-b);
 }
-//a function that multiplies  two numbers                                                           
-int multiplication (int a, int b)
+/**
+ * A function that multiplies two numbers
+ *
+ *Returns a double
+ */                                                           
+int multiplication (double a, double b)
 {
   return (a*b);
 }
-
-//a function that divides two numbers                                                               
+/**
+ * A function that divides two numbers
+ *
+ *Returns a double
+ */                                                               
 double division (double a, double b)
 {
-  if(b != 0)
+  if(b != 0)  /** The devisor must be non-zero number */
     {
       return a / b;
 
     }
-  cout << "Error: division by zero.\n";
+  cout << "Error: division by zero.\n"; /** Else an error will be detected*/
   return 0;
 }
 
+/*!
+  *My class
+ */
+ /*!
+  *Here we test our functions
+ */
 int main ()
 {
+ /**
+  *@param num1 a double argument(entry)
+  *
+  *@param num2 a double argument(entry)
+  */ 
   int num1, num2;
  
 	cout << "Enter a number :\n";
@@ -47,5 +84,4 @@ int main ()
   cout << "a*b = " << p<<endl;
   cout << "a/b = " << r<<endl;
 }
-
-
+}
