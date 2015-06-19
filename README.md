@@ -12,4 +12,4 @@
 - [2015-06-16 - makefile  & cmake ](report/2015-06-16.md)
 - [2015-06-17 - makefile  & cmake ](report/2015-06-17.md)
 - [2015-06-18 - CMakeLists.txt & DOXYGEN ](report/2015-06-18.md)
-- [2015-06-19 - DXYGEN-DOCUMENTATION ](report/2015-06-19.md)
+- [2015-06-19 - DOXYGEN-DOCUMENTATION ](report/2015-06-19.md)
