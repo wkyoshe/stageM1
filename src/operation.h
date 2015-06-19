@@ -67,12 +67,7 @@ class operation
  private: 
          double x,y; /*!<private double values */
          
-/*!
- * \breif     operation.h
- * \Date      june 19, 2015
- * \author:   kyoshe winstone
- * \version   1.1
- */             
+     
          
 };
  
