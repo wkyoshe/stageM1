@@ -17,7 +17,7 @@ using namespace std;
    *@param argv An argument vector of a command line arguments
    *Return an integer 0 upon exit success
    */
-int  main(int argc, char **argv) 
+int main(int argc, char **argv) 
 { 
   
   /**
