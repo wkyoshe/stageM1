@@ -1,22 +1,8 @@
-/*!
- * \breif     operation.h
- * \Date      june 19, 2015
- * \author:   kyoshe winstone
- * \version   1.1
- */  
-     
 #include "operation.h"
 #include <iostream>
 using namespace std;
 
-class operation{
-         public:
-               
-                 //! Default Constructor
-                  /*!
-                    *constructs an empty object
-                   */  
-  
+
 
 operation::operation() : x(0), y(0)
 {}
@@ -87,12 +73,22 @@ double operation::multiplication( )
    *returns the quotient of two numbers
    */
 double operation::division( )
-{if(y != 0)
+{
+ if(y != 0)
     {
       return x / y;
 
     }
-  //cout << "Error: division by zero.\n";
-  //return 0;
+    
+  cout << "Error: division by zero.\n";
+  return 0;
 }
-}
+/**
+    operation.cpp
+    Purpose: Perform basic operations of numbers
+
+    @author Kyoshe Winstone
+    @version 1.0
+*/
+
+
