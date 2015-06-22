@@ -1,0 +1,571 @@
+\documentclass[11pt,utf8]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{graphicx}
+%\usepackage[latin1]{inputenc}
+%\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{hyperref}
+\hypersetup{
+     colorlinks   = true,
+     citecolor    = gray
+} 
+ \usepackage{amsmath,scalerel}
+\usepackage{textcomp}
+\usepackage{enumerate}% http://ctan.org/pkg/enumerate
+
+\DeclareMathOperator*{\Bigcdot}{\scalerel*{\cdot}{\bigodot}}
+
+
+\usepackage{colortbl,booktabs}
+\usepackage{listings}
+\usepackage{pgfplots,pgfplotstable}
+\usepackage{xspace}
+\usepackage{tikz}
+\usetikzlibrary{arrows,patterns,plotmarks,shapes,snakes,er,3d,automata,backgrounds,topaths,trees,petri,mindmap}
+
+
+\definecolor{lbcolor}{rgb}{0.95,0.95,0.95}
+\definecolor{cblue}{rgb}{0.,0.0,0.6}
+
+\newcommand{\Air}{\text{\textsc{Air}}\xspace}
+\newcommand{\PCB}{\text{\textsc{PCB}}\xspace}
+\newcommand{\IC}{\text{\textsc{IC}}\xspace}
+\newcommand{\ICs}{\text{\textsc{ICs}}\xspace}
+
+\newcommand{\OPUS}{\textsc{OPUS}\xspace}
+\newcommand{\FF}{\textsc{Freefem++}\xspace}
+\newcommand{\COMSOL}{\textsc{Comsol}\xspace}
+\newcommand{\COMSOLUJF}{\textsc{Comsol(UJF)}\xspace}
+\newcommand{\COMSOLEADS}{\textsc{Comsol(EADS)}\xspace}
+\newcommand{\Feelpp}{\textsc{Feel++}\xspace}
+\newcommand{\GMSH}{\textsc{Gmsh}\xspace}
+\newcommand{\BOOST}{\textsc{Boost}\xspace}
+
+\newcommand{\UJF}{\textsc{UJF}\xspace}
+\newcommand{\EADS}{\textsc{EADS}\xspace}
+
+\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}\xspace}
+
+
+\definecolor{Lightgray}{rgb}{0.85, 0.85, 0.85}
+
+\usepackage{filecontents,listings}
+\lstset{language=c++,showspaces=false,showstringspaces=false,captionpos=t,literate={>>}{\ensuremath{>>}}1,mathescape}
+\lstset{basicstyle=\small\bf\ttfamily}
+\lstset{lineskip=-2pt}
+
+%\lstset{emph={inline},emphstyle=\color{red}\bfseries}
+
+\definecolor{cgreen}{rgb}{0.,0.6,0.0}
+
+\definecolor{violet}{rgb}{0.5,0,0.5}
+\definecolor{vertfonce}{rgb}{0.,0.5,0.}
+\definecolor{rouge}{rgb}{0.5,0.,0.}
+\definecolor{bleu}{rgb}{0.,0.,1}
+\definecolor{orange}{rgb}{1,0.5,0}
+\lstset{keywordstyle=\color{red}\bfseries}
+\lstset{
+emph={form,form1,form2,integrate,on,grad,gradt,dot,id,dx,dy,dz,idt,dxt,dyt,dzt,idv,dxv,dy,dzv,gradv,div,divt,divv,dn,jump,trans,vec,cst,
+  project,P,Px,Py,Pz,one,oneX,oneY,oneZ,hFace,N,Nx,Ny,Nz,sin,cos,min,max,abs,pow,chi,exp,LinearForm,BilinearForm,MixedLinearForm,MixedBilinearForm,
+  FESpace,MixedFESpace,integrate,project,addCL},emphstyle=\color{bleu},
+emph={[2]\_space,\_range,\_expr,\_quad,\_quad1,\_test,\_trial,\_matrix,\_vector,\_solution,\_element,\_rhs,\_rowstart,\_colstart,\_block,
+  \_pattern,\_pattern\_block,\_domainSpace,\_imageSpace,\_mesh,\_name,\_partitions,\_worldcomm,\_worldscomm,
+  \_type,\_marker1,\_marker2,\_marker3,\_marker4,\_marker5,\_marker6,\_marker7,\_marker8,\_markerAll,\_argc,\_argv,\_desc},emphstyle={[2]\color{violet}\bfseries},
+emph={[3]elements,markerName,boundaryfaces,markedfaces,\_Q,solve, newMatrix,newVector,newZeroMatrix,newZeroVector,
+  newBlockMatrix,newBlockVector,localize,element,apply,createMesh,localSize,subWorldComm,transpose,setMarker,add,save,
+  dirichlet\_vec,neumann\_scal,updateTime,exportResults,updateBdf,init,FluidMechanics}, emphstyle={[3]\color{rouge}\bfseries},
+emph={[4]Backend,BlocksVector,BlocksSparseMatrix,BlocksStencilPattern,Blocks,opInterpolation,FunctionSpace,Lagrange,bases,Pch,unitSquare,WorldComm,
+  Mesh,Simplex,Node,Rectangle,Quadrangle,Circle,AppliManagement,Environment,feel\_options,exporter},emphstyle={[4]\color{orange}\bfseries},
+emph={[5]size\_type,uint16\_type},emphstyle={[5]\color{red}\bfseries},
+emph={[6]GeoTool,vf,cl},emphstyle={[6]\color{cyan}\bfseries}
+}
+
+
+\lstset{commentstyle=\ttfamily\color{cgreen}}
+\lstset{numberstyle=\tiny}
+\lstset{backgroundcolor=\color{lbcolor},rulecolor=}
+
+\lstset{frame=single,framerule=0.5pt}
+\lstset{belowskip=\smallskipamount}
+\lstset{aboveskip=\smallskipamount}
+\lstset{includerangemarker=false,rangeprefix=\/\/\#\ ,% curly left brace plus space
+  rangesuffix=\ \#}
+
+
+%--------dimension
+\textwidth 160 true mm
+\textheight 220 truemm
+\voffset -15 true mm
+\hoffset -18 true mm
+
+\def \x  {\textbf x}
+\def \n  {\textbf n}
+\def \cT {{\cal T}}
+
+
+\title{RAPPORT DU STAGE}
+\author{PREPARED BY :\\ Kyoshe Winstone\\University of Strasbourg\\STRASBOURG}
+
+
+\begin{document}
+\begin{center}
+\section*{Kyoshe Winstone\\ MASTER 1 CSMI}
+\section*{INTERNSHIP REPORT}
+
+\begin{center}
+ \includegraphics{doxy}
+ \end{center}
+\section*{WEEKLY REPORT }
+\label{weekly report of the internship}
+
+\end{center}
+
+
+
+\newpage
+
+\subsection{CONTENTS.}
+\label{sec: introduction to github}
+This report will focus on the following fields.
+\begin{enumerate}[i.]
+\item Introduction\\
+\item Github\\
+\item Markdown\\
+\item Dummy mini-project\\
+\item Doxygen\\
+\item Refferences\\
+
+ \end {enumerate}
+
+\subsection{INTRODUCTION.}
+\label{sec: introduction }
+Doxygen  is a documentation generator, a tool for writing software reference documentation. The documentation is written within code, and is thus relatively easy to keep up to date. Doxygen can cross reference documentation and code, so that the reader of a document can easily refer to the actual code.\\
+
+This report provides a short quick start on how to produce a documentation of a simple dummy project using doxygen.. Doxygen is used to parse the source code for suitable comment blocks to automatically generate clean Freespace to Open documentation in a number of formats.\\
+Doxygen uses a small text file, called a Doxyfile, as a script to analyse source code and produce the required output formats.
+Doxygen\textquotesingle s ease of regenerating documentation from source code allows the production of up to date documentation reflecting the latest source code changes at any time.\\
+Morever, this report introduces basic knowledge on how to make Makefiles and CMakeLists.txt for easy compilation of source codes.\\
+I have also intoduced in this report, the idea of github and how it works.
+
+
+
+\subsection{GITHUB}
+\label{sec: introduction to github}
+GitHub is a web-based \href {https://en.wikipedia.org/wiki/Git_(software)}{Git} repository hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features. Unlike Git, which is strictly a command-line tool, GitHub provides a web-based graphical interface and desktop as well as mobile integration. It also provides access control and several collaboration features such as wikis, task management, and bug tracking and feature requests for every project.\\
+GitHub offers both plans for private repositories and free accounts, which are usually used to host open-source software projects. As of 2015, GitHub reports having over 9 million users and over 21.1 million \href{https://en.wikipedia.org/wiki/Repository_(revision_control)}{repositories}, making it the largest code hoster in the world.\\
+This part of the report covers various areas such as:\\
+\begin{enumerate}[I.]
+ \item installing and configuring GIT to allow the github platform to function.\\
+ \item Creating an account, signing up and eventually \href{https://help.github.com/articles/create-a-repo/}{creating Repositories}\\
+ \item adding files to a repo\\
+ \item \href{https://guides.github.com/features/issues/}{Mastering issues}\\
+ \item  pushing commits\\
+ \item pull requests\\
+ \end {enumerate}
+
+\subsection{MARKDOWN.}
+\label{sec: introduction to github}
+Markdown is a markup language with plain text formatting syntax designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor. John Gruber, with substantial contributions from Aaron Swartz, created the Markdown language in 2004 with the goal of enabling people "to write using an easy-to-read, easy-to-write plain text format, and optionally convert it to structurally valid XHTML (or HTML)\\
+Markdown is a lightweight and easy-to-use syntax for styling all forms of writing on the GitHub platform.\\
+During the first part of my internship, i have been able to learn and use the basic steps of using \href{https://guides.github.com/features/mastering-markdown/}{MARKDOWN} editor to:   \\
+\begin{itemize}
+ \item How the Markdown format makes styled collaborative editing easy\\
+ \item How Markdown differs from traditional formatting approaches\\
+ \item How to use Markdown to format text\\
+ \item How to leverage GitHub\textquotesingle s automatic Markdown rendering\\
+ \item How to apply GitHub\textquotesingle s unique Markdown extensions\\
+ \item \href{https://help.github.com/articles/about-gists/}{Gists} on githhub\\
+ \item Comments in Issues and Pull Requests\\
+ \item Create Files with the .md or .markdown extension\\
+ \item Highlighting syntax\\
+  \begin{center}
+  \includegraphics{pic1}
+  \end{center}
+ \end {itemize}
+
+
+
+\subsection{DUMMY MINI-PROJECT}
+\label{sec: introduction to dummy project}
+
+The goal of this mini project is to create a simple program and then be able to write the " Makefiles " and "CMakeLists.txt" from the resulting source codes.
+\begin{itemize}
+\item source code for the simple operation program created\\
+operation.cpp
+\begin{lstlisting}
+/#include "operation.h"
+#include <iostream>
+using namespace std;   
+                 //! Default Constructor
+                  /*!
+                    *constructs an empty object
+                   */  
+  
+
+operation::operation() : x(0), y(0)
+{}
+  /**
+   *Constructs an objects with two arguments x and y
+   */
+operation::operation(double x, double y) : x(x), y(y)
+{}
+
+  /**
+   *set the value of x
+   */
+void operation::setX(double x)
+{
+  this->x = x;
+}
+ 
+  /**
+   *set the value of y
+   */
+void operation::setY(double y)
+{
+  this->y = y;
+}
+
+  /**
+   *return the value of x
+   */
+double operation::getX() const
+{
+  return this->x;
+} 
+
+  /**
+   *set the value of y
+   */
+double operation::getY() const
+{
+  return this->y;
+} 
+ 
+
+  /**
+   *returns the sum of two numbers
+   */
+double operation::addition( )
+{
+  return (x + y);
+}
+
+  /**
+   *returns the diff of two numbers
+   */
+double operation::substruction( )
+{
+  return (x - y);
+}
+
+  /**
+   *returns the product of two numbers
+   */
+double operation::multiplication( )
+{
+  return (x * y);
+}
+
+  /**
+   *returns the quotient of two numbers
+   */
+double operation::division( )
+{if(y != 0)
+    {
+      return x / y;
+
+    }
+  //cout << "Error: division by zero.\n";
+  //return 0;
+}
+
+\end{lstlisting}
+
+\newpage
+operation.h
+\begin{lstlisting}
+#ifndef OPERATION_H
+#define OPERATION_H
+ 
+#include <iostream>
+using namespace std;
+//!operation class
+class operation{ 
+  //! Default Constructor
+   /*!
+    *constructs an empty object
+   */
+  operation();
+  
+  /**
+   *Constructs an objects with two arguments x and y
+   */
+  operation(double x, double y);
+  
+  /**
+   *set the value of x
+   */
+  void setX(double x);
+  /**
+   *set the value of y
+   */
+  void setY(double y);
+  /**
+   *return the value of x
+   */
+  double getX() const;
+  /**
+   *return the value of y
+   */
+  double getY() const;
+  
+   
+  /**
+   *returns a double, The sum of two numbers
+   */
+  double addition();
+  /**
+   *returns a double, The difference of two numbers
+   */
+  double substruction();
+  /**
+   *returns a double, The product of two numbers
+   */
+  double multiplication();
+  /**
+   *returns a double, The quotient of two numbers
+   */
+  double division();
+  
+   /**
+    *@param x is an attribute
+    *@param y is an attribute too
+    *
+    */
+ private: 
+         double x,y; /*!<private double values */
+         
+     
+         
+};
+ 
+#endif
+\end{lstlisting}
+main.cpp
+\begin{lstlisting}
+#include <iostream>
+#include <stdlib.h>
+ 
+using namespace std;
+ 
+#include "operation.h"
+
+  /**
+   *Main class
+   *@param argc An integer argument count of the
+       command line arguments
+   *@param argv An argument vector of a command line arguments
+   *Return an integer 0 upon exit success
+   */
+int  main(int argc, char **argv) 
+{ 
+  
+  /**
+    *@param x is variable
+    *@param y is  variable too
+    *
+    */
+  double x =0, y=0;
+  
+  if(argc == 3){
+    x = atof(argv[1]);
+    y = atof(argv[2]);
+  }
+  /**
+   *Creates an object of type "operation"
+   */
+  operation B(x,y);
+  
+    //! Standard output
+    /*!
+     *Displays the outputs
+    */ 
+  cout << B.getX() << "+" << B.getY() << "=" << B.addition() << endl;
+  cout << B.getX() << "-" << B.getY() << "=" << B.substruction() << endl;
+  cout << B.getX() << "*" << B.getY() << "=" << B.multiplication() << endl;
+  cout << B.getX() << "/" << B.getY() << "=" << B.division() << endl;
+  return 0;
+}
+
+\end{lstlisting}
+ \newpage
+\item Makefile for our source code
+
+Compiling your source code files can be tedious, specially when you want to include several source files and have to type the compiling command everytime you want to do it.
+Makefiles are special format files that together with the make utility will help you to automatically build and manage your projects.
+Below is an example of the makefile for compiling our source codes for the dummy mini-project.
+\begin{lstlisting}
+all: operation 
+operation: main.o operation.o
+	g++ main.o operation.o -o operation 
+
+main.o: main.cpp
+	g++ -c main.cpp
+
+operation.o: operation.cpp
+	g++ -c operation.cpp
+
+
+clean:
+	rm *o operation 
+\end{lstlisting}
+
+\textbf{How to use the makefile to compile the codes}\\
+We recommend creating a new directory and placing all the files in there.\\
+\underline{\textbf{\textit{The make utility}}}
+
+If you run
+\begin{lstlisting}
+make
+\end{lstlisting}
+this program will look for a file named makefile in your directory, and then execute it.\\
+
+If you have several makefiles, then you can execute them with the command:\\
+\begin{lstlisting}
+make -f MyMakefile
+\end{lstlisting}
+
+\item CMakeLists.txt  for our source code\\
+CMake is a sophisticated, cross-platform, open-source build system developed by Kitware in 2001. CMake is the name used to refer to the entire family of tools: CMake, CTest, CDash, and CPack. \\
+CMake ? An intelligent build system used to build simple, to very elaborate projects.\\
+
+CMake simplifies the potentially monstrous build system into a few easy to write files. It is targeted towards C and C++ and is usable with various compiler/OS support. At the risk of over simplifying things, CMake looks at your project and sees a ?file system?. You tell it where all your files are at, what you want it to do with them, and it does it. In a nut shell it?s really that easy. More elaborately however, CMake is wonderful for it?s design to support complex directory hierarchies. When you use CMake it will locate include files, libraries, executables, other optional build directives, then link everything for you. No more need of Makefiles.\\
+
+CMake basically requires one thing, a CMakeLists.txt file.\\
+Below is the CMakeLists.txt file for our source code.
+\begin{lstlisting}
+#  cmake; 
+#
+#  Author(s): Kyoshe Winstone <wkyoshe@gmail.com>
+#       Date: 2015-06-18
+#
+#  University of Strasbourg.
+#
+cmake_minimum_required(VERSION 2.8.9 FATAL_ERROR)
+project(operation)
+
+add_library(operationlib operation.cpp operation.h)
+
+target_include_directories (operationlib PUBLIC ${CMAKE\textunderscore CURRENT\textunderscore 
+SOURCE\textunderscore DIR}).   
+add\textunderscore executable(operation main.cpp)
+
+target_link_libraries(operation LINK_PUBLIC operationlib)
+
+$\end{lstlisting}
+
+Now we want to compile our program. Once run for the first time CMake will configure itself to our system, and place the binaries (our output files) into the directory we called it from. This is where we cd into the build folder, and run
+\begin{lstlisting}
+        cmake ..
+\end{lstlisting}
+The ' .. ' argument is the same as the one used in BASH, it tells CMake to execute from the CMakeLists.txt in the previous directory. This call just produced your Makefile, so let\textquotesingle s finish it off with the last command.
+\begin{lstlisting}
+       make
+ \end{lstlisting}      
+       
+Now if we ls into the build folder we'll see all kinds of stuff.\\
+
+CMakeCache.txt - Think of this as a configuration file. It has many advanced settings to optimize the build process for large projects. (Such as building the Linux Kernel!  )\\
+CMakeFiles (directory) - This has a lot of the stuff CMake uses under the hood to build your project.\\ 
+cmake-install.cmake - Our install file. We didn't use one in this program.\\
+operation-  This is our program\\
+Makefile - remember our last command 'make'? This is the Makefile produced by Cmake, this is really what it all came down to.\\
+We've Now built a program using CMake.
+
+
+   \end{itemize}
+ \subsection{DOXYGEN-DOCUMENTATION}
+\label{sec: documentation using DOXYGEN}
+Doxygen is the de facto standard tool for generating documentation from annotated C++ sources, but it also supports other popular programming languages such as C, Objective-C, PHP, Java, Python, IDL (Corba, Microsoft, and UNO/OpenOffice flavors), Fortran, VHDL, Tcl, and to some extent D\\
+
+It can generate an on-line documentation browser (in HTML) and an off-line reference manual LaTeX from a set of documented source files.\\
+You can configure doxygen to extract the code structure from undocumented source files. This is very useful to quickly find your way in large source distributions\\
+You can also use doxygen for creating normal documentation.\\*
+First, we need to  \href{http://www.stack.nl/~dimitri/doxygen/download.html}{download}  and \href{http://www.stack.nl/~dimitri/doxygen/manual/install.html}{install} the doxygen application on our computer to be able to generate the required files.\\
+
+
+This part of the report covers the following aspects: \\
+\begin{itemize}
+\item How to put comments in our code such that doxygen incorporates them in the documentation it generates. This is further detailed in the next section. click \href{https://github.com/wkyoshe/stageM1/tree/master/src}{here} to see the documented source code of our project\\
+\item Ways to structure the contents of a comment block such that the output looks good, as explained in section Anatomy of a comment block.\\
+We can use the JavaDoc style, which consist of a C-style comment block starting with two *\textquotesingle s, like this:
+ \begin{lstlisting}     
+/**
+ * ... text ...
+ */
+  \end{lstlisting}
+Or we can use the Qt style and add an exclamation mark (!) after the opening of a C-style comment block, as shown in this example:
+\begin {lstlisting}
+/*!
+ * ... text ...
+ */
+  \end{lstlisting}
+In both cases the intermediate **\textquotesingle  s are optional, so
+ \begin{lstlisting}
+/*!
+ ... text ...
+*/
+ \end{lstlisting}
+is also valid.
+
+A third alternative is to use a block of at least two C++ comment lines, where each line starts with an additional slash or an exclamation mark.
+     
+\item Using CMakeLists.txt to allow the doxygen documentation to be generated with make doc when using cmake.\\
+For this to happen, we add the following lines into the  CMakeLists.txt 
+ \begin{lstlisting}
+ find_package(Doxygen)
+if(DOXYGEN_FOUND)
+configure_file(${CMAKE\textunderscore CURRENT\textunderscore SOURCE\textunderscore DIR}/Doxyfile.in 
+${CMAKE_CURRENT_ BINARY_DIR}/Doxyfile ONLY)
+add_custom_target(doc
+${DOXYGEN\textunderscore EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
+WORKING_DIRECTORY ${CMAKE\textunderscore CURRENT\textunderscore BINARY\textunderscore DIR} \\*
+COMMENT "Generating API documentation with Doxygen" VERBATIM
+)
+endif(DOXYGEN_FOUND)
+ $ \end{lstlisting}
+  
+\end{itemize}
+
+Finally,\\
+ At this point i am able to document the simple dummy project codes and use DOXYGEN to produce:\\
+\begin{enumerate}
+\item An on-line documentation browser (in HTML)
+\item An off-line reference manual LaTeX from a set of documented source files.
+\end{enumerate}
+From the Latex files we can generate a pdf format  using the command lines\\
+First type  
+\begin{lstlisting}
+pdflatex 
+\end{lstlisting}
+ then  
+\begin{lstlisting}
+pdflatex myfile 
+\end{lstlisting}
+
+ \subsection{REFFERENCES}
+\label{sec: refferences}
+
+\begin{enumerate}[i.]
+  \item  \href{http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html}{DOXYGEN MANUAL}
+  \item  \href{https://fr.wikibooks.org/wiki/Programmation_C%2B%2B/Les_classes#Exemples_de_classes}{WIKIBOOKS}
+  \item  \href{http://www.cmake.org/cmake-tutorial}{CMAKE TUTORIALS}
+  \item  \href{http://gl.developpez.com/tutoriel/outil/makefile/}{MAKEFILE TUTORIAL}
+  \item  \href{https://en.wikipedia.org/wiki/Doxygen}{WIKIPEDIA}
+\end{enumerate}
+
+\end{document}
+
+\end
