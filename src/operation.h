@@ -7,18 +7,24 @@ using namespace std;
 class operation
 {
  public:
-  // Constructors
+  /**
+   *Constructors
+   */
   operation();
   operation(double x, double y);
  
-  //Accessors and mutators
+ /**
+  *Accessors and mutators
+  */
   void setX(double x);
   void setY(double y);
   double getX() const;
   double getY() const;
  
-  // methods
- 
+  
+  /**
+   *functions
+   */
   double addition();
   double substruction();
   double multiplication();
@@ -32,12 +38,11 @@ class operation
   double x,y;
 };
 /**
-    operation.cpp
-    Purpose: Perform basic operations of numbers
-
-    @author Kyoshe Winstone
-    @version 1.0
-*/
+ *@brief     operation.h
+ *@date      june 23, 2015
+ *@author:   kyoshe winstone
+ *@version   1.0
+ */
 
  
 #endif
