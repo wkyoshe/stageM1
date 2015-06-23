@@ -56,7 +56,7 @@ add_executable(operation main.cpp)
 target_link_libraries(operation LINK_PUBLIC operationlib)
 
 # add a target to generate API documentation with Doxygen
-option(BUILD_DOCUMENTATION "Use Doxygen to create the HTML based API documentation" OFF)
+option(BUILD_DOCUMENTATION "Use Doxygen to create the HTML based API documentation" ON)
 if(BUILD_DOCUMENTATION)
 find_package(Doxygen)
   if(NOT DOXYGEN_FOUND)
