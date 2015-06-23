@@ -66,7 +66,7 @@ find_package(Doxygen)
   configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in 
                        ${CMAKE_CURRENT_SOURCE_DIR} /Doxyfile.in @ONLY)
   add_custom_target(doc ALL
-             COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile
+             COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in
                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
                   COMMENT "Generating API documentation with Doxygen" VERBATIM)
   #Doxygen will be triggered every time we run make
