@@ -8,12 +8,14 @@ operation::operation() : x(0), y(0)
 {}
   /**
    *Constructs an objects with two arguments x and y
+   *@param x is a variable
+   *@param y is a variable
    */
 operation::operation(double x, double y) : x(x), y(y)
 {}
 
   /**
-   *set the value of x
+   *sets the x value
    */
 void operation::setX(double x)
 {
@@ -21,7 +23,7 @@ void operation::setX(double x)
 }
  
   /**
-   *set the value of y
+   *sets the y value 
    */
 void operation::setY(double y)
 {
@@ -29,7 +31,7 @@ void operation::setY(double y)
 }
 
   /**
-   *return the value of x
+   *@return the x value
    */
 double operation::getX() const
 {
@@ -37,7 +39,7 @@ double operation::getX() const
 } 
 
   /**
-   *set the value of y
+   *@return the  y value
    */
 double operation::getY() const
 {
@@ -46,7 +48,7 @@ double operation::getY() const
  
 
   /**
-   *returns the sum of two numbers
+   *@returns the sum of two numbers
    */
 double operation::addition( )
 {
@@ -54,7 +56,7 @@ double operation::addition( )
 }
 
   /**
-   *returns the diff of two numbers
+   *@returns the diff of two numbers
    */
 double operation::substruction( )
 {
@@ -62,7 +64,7 @@ double operation::substruction( )
 }
 
   /**
-   *returns the product of two numbers
+   *@returns the product of two numbers
    */
 double operation::multiplication( )
 {
@@ -70,7 +72,7 @@ double operation::multiplication( )
 }
 
   /**
-   *returns the quotient of two numbers
+   *@returns the quotient of two numbers
    */
 double operation::division( )
 {
@@ -84,11 +86,9 @@ double operation::division( )
   return 0;
 }
 /**
-    operation.cpp
-    Purpose: Perform basic operations of numbers
-
-    @author Kyoshe Winstone
-    @version 1.0
-*/
-
+ * @brief     operation.h
+ * @date      june 19, 2015
+ * @author   kyoshe winstone
+ * @version   1.1
+ */
 
