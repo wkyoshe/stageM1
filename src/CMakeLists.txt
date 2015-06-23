@@ -64,10 +64,9 @@ find_package(Doxygen)
       "Doxygen is needed to build the documentation. Please install it correctly")
   endif()
   configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in 
-                       ${CMAKE_CURRENT_SOURCE_DIR} /Doxyfile.in @ONLY)
+                       ${PROJECT_BINARY_DIR}/Doxyfile @ONLY)
   add_custom_target(doc ALL
-             COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in
-               WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+             COMMAND ${DOXYGEN_EXECUTABLE} ${PROJECT_BINARY_DIR}/Doxyfile
                   COMMENT "Generating API documentation with Doxygen" VERBATIM)
   #Doxygen will be triggered every time we run make
   # IF you do NOT want the documentation to be generated EVERY time you build the project
