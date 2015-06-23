@@ -27,14 +27,18 @@ project(operation)
 # The extension is already found. Any number of sources could be listed here.
 
 option(USE_SHARED 
-            "use a shared library" ON)
+            "use a shared library" OFF)
             
 if(USE_SHARED)
 
-add_library(operationlib operation.cpp operation.h)  
+add_library(operationlib SHARED operation.cpp operation.h)  
 # Make sure the compiler can find include files for our operation library
 # when other libraries or executables link to operation
 
+target_include_directories (operationlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+else()
+add_library(operationlib STATIC operation.cpp operation.h)
 target_include_directories (operationlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
 # 
