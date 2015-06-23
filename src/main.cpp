@@ -1,6 +1,6 @@
-/*!
- * \breif     operation.h
- * \Date      june 19, 2015
+/**
+ * \brief     operation.h
+ * \date      june 19, 2015
  * \author:   kyoshe winstone
  * \version   1.1
  */
@@ -15,15 +15,14 @@ using namespace std;
    *Main class
    *@param argc An integer argument count of the command line arguments
    *@param argv An argument vector of a command line arguments
-   *Return an integer 0 upon exit success
+   *@return an integer 0 upon exit success
    */
 int main(int argc, char **argv) 
 { 
   
   /**
-    *@param x is variable
-    *@param y is  variable too
-    *
+    *x is variable
+    *y is variable too
     */
   double x =0, y=0;
   
@@ -36,10 +35,9 @@ int main(int argc, char **argv)
    */
   operation B(x,y);
   
-    //! Standard output
-    /*!
-     *Displays the outputs
-    */ 
+    /** 
+     *Standard output
+     */ 
   cout << B.getX() << "+" << B.getY() << "=" << B.addition() << endl;
   cout << B.getX() << "-" << B.getY() << "=" << B.substruction() << endl;
   cout << B.getX() << "*" << B.getY() << "=" << B.multiplication() << endl;
