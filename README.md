@@ -14,3 +14,4 @@
 - [2015-06-18 - CMakeLists.txt & DOXYGEN ](report/dailyReport/2015-06-18.md)
 - [2015-06-19 - DOXYGEN-DOCUMENTATION ](report/dailyReport/2015-06-19.md)
 - [2015-06-23 - DOXYGEN-DOCUMENTATION ](report/dailyReport/2015-06-23.md)
+- [2015-06-23 - GITHUB TOOLS ](report/dailyReport/2015-06-24.md)
