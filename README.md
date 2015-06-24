@@ -5,12 +5,12 @@
 
 ## My daily work reports.
 
-- [2015-06-10 - markdown & github](report/2015-06-10.md)
-- [2015-06-11](report/2015-06-11.md)
-- [2015-06-12](report/2015-06-12.md)
-- [2015-06-15](report/2015-06-15.md)
-- [2015-06-16 - makefile  & cmake ](report/2015-06-16.md)
-- [2015-06-17 - makefile  & cmake ](report/2015-06-17.md)
-- [2015-06-18 - CMakeLists.txt & DOXYGEN ](report/2015-06-18.md)
-- [2015-06-19 - DOXYGEN-DOCUMENTATION ](report/2015-06-19.md)
-- [2015-06-23 - DOXYGEN-DOCUMENTATION ](report/2015-06-23.md)
+- [2015-06-10 - markdown & github](report/dailyReport/2015-06-10.md)
+- [2015-06-11](report/dailyReport/2015-06-11.md)
+- [2015-06-12](report/dailyReport/2015-06-12.md)
+- [2015-06-15](report/dailyReport/2015-06-15.md)
+- [2015-06-16 - makefile  & cmake ](repor/dailyReportt/2015-06-16.md)
+- [2015-06-17 - makefile  & cmake ](report/dailyReport/2015-06-17.md)
+- [2015-06-18 - CMakeLists.txt & DOXYGEN ](report/dailyReport/2015-06-18.md)
+- [2015-06-19 - DOXYGEN-DOCUMENTATION ](report/dailyReport/2015-06-19.md)
+- [2015-06-23 - DOXYGEN-DOCUMENTATION ](report/dailyReport/2015-06-23.md)
