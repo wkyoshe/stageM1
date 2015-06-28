@@ -18,8 +18,8 @@
 #
 
 
-
-
+#set the CMAKE_CXX_COMPILER
+set(CMAKE_CXX_COMPILER /usr/bin/clag++ 3.6.0)
 cmake_minimum_required(VERSION 2.8.9 FATAL_ERROR)
 project(operation)
 
@@ -72,6 +72,5 @@ find_package(Doxygen)
   # IF you do NOT want the documentation to be generated EVERY time you build the project
   # then leave out the 'ALL' keyword from the above command.                
 endif()
-
 
 
