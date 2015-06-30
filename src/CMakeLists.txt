@@ -38,7 +38,7 @@ add_library(Chainelib SHARED Chaine.cpp Chaine.h)
 target_include_directories (Chainelib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 else()
-add_library(operationlib STATIC Chaine.cpp Chaine.h)
+add_library(Chainelib STATIC Chaine.cpp Chaine.h)
 target_include_directories (Chainelib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
 # 
