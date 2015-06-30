@@ -6,7 +6,7 @@
 ## My daily work reports.
 | Kyoshe | Diedou |
 | --- | --- |
-|[2015-06-10 - markdown & github](report/dailyReport/2015-06-10.md) | - |
+|[2015-06-10 - markdown & github](report/dailyReport/2015-06-10.md) |[2015-06-29- Github ,gitter ,C++] (report/dailyReport/2015-06-29b.md)|
 |[2015-06-11](report/dailyReport/2015-06-11.md) | - |
 |[2015-06-12](report/dailyReport/2015-06-12.md) | - |
 |[2015-06-15](report/dailyReport/2015-06-15.md) | - |
