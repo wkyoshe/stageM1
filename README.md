@@ -18,4 +18,4 @@
 |2015-06-24 |[GitHub tools ](report/dailyReport/2015-06-24.md) | - |
 |2015-06-25 |[Feel++ book ](report/dailyReport/2015-06-25.md) | - |
 |2015-06-29 |[Feel++ book ](report/dailyReport/2015-06-29.md) | [Github ,gitter ,C++](report/dailyReport/2015-06-29B.md)|
-|2015-06-30 | [Feelpp-Doxygen ](report/dailyReport/2015-06-30.md) | [C++ ,CMake ](report/dailyReport/2015-06-30B.md)|
+|2015-06-30 | [Feelpp-Doxygen ](report/dailyReport/2015-06-30.md) | [C++ ,CMake & MakeFile,doxygen] ](report/dailyReport/2015-06-30B.md)|
