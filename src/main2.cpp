@@ -1,26 +1,45 @@
+/**
+ * @brief     Chaine.h
+ * @date      June 29, 2015
+ * @author    Diedhiou Ahmed Bachir
+ * @version   1.1
+ */
+
+
 #include <iostream>
-#include <stdlib.h>
 #include "Chaine.h"
+#include <stdlib.h>
 using namespace std;
 
+/**
+   *Main class
+   *@param argc An integer argument count of the command line arguments
+   *@param argv An argument vector of a command line arguments
+   *@return an integer 0 upon exit success
+   */ 
 
-int main(int argc, char **argv){  
 
+int main(int argc, char **argv){ 
+
+/**
+  *Creates an object of type "Chaine"
+  */
 
 Chaine A;
-A.mot=argv[1];
-//cout << "SAISIE DE LA CHAINE "<< endl ;
-//cout<<"Tapez la chaine:";cin>> A.mot ;	
-A.Tri(); 
-cout << "le mot ordonne est :" <<A.getMot()<<endl ;  // obtenir le mot trié 
-cout<<"la longueur du mot est :"<<A.getMot().size()<<endl; // obetnir taille du mot
+A.setMot(argv[1]);
 
-cout<<A.Estpalindrom()<<endl; // verfifier si c'est un palindrome
+if (argc == 2){
 
-  /* for ( int i = 1; i < argc; ++i ) {
-      cout << argv[i] << endl;
-   }*/
+/**
+*Standard output
+*/
+cout<<A.Estpalindrom()<<endl; 
+cout << "le mot ordonne est :" <<A.Tri()<<endl ; 
+cout<<"la longueur du mot est :"<<A.getMot().size()<<endl; 
+}
+else { cout <<"****Veuillez saisir un  seul mot ****"<<endl;}
 
 return 0;
 
 }
+
