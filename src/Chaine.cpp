@@ -32,6 +32,7 @@ string Chaine::getMot(){
 
 /**
  *sets the string 
+ *@param mot is the string to be set 
  */
  
 void Chaine::setMot(string mot){
