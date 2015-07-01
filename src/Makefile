@@ -1,15 +1,12 @@
-all: operation code
-operation: main.o operation.o
-	g++ main.o operation.o -o operation 
+all: Chaine 
+operation: main2.o Chaine.o
+	g++ main2.o Chaine.o -o Chaine 
 
-main.o: main.cpp
-	g++ -c main.cpp
+main.o: main2.cpp
+	g++ -c main2.cpp
 
-operation.o: operation.cpp
-	g++ -c operation.cpp
-
-code: code.cpp
-	g++ code.cpp -o code
+operation.o: Chaine.cpp
+	g++ -c Chaine.cpp
 
 clean:
-	rm *o operation code
+	rm *o Chaine 
