@@ -33,8 +33,8 @@ if (argc == 2){
 /**
 *Standard output
 */
-if (A.Estpalindrom() ==0){cout << "false"<<endl;}
-else { cout << "true"<<endl;} 
+if (A.Estpalindrom() ==0){cout << "Palindrome :false"<<endl;}
+else { cout << "Palindrome :true"<<endl;} 
 cout << "le mot ordonne est :" <<A.Tri()<<endl ; 
 cout<<"la longueur du mot est :"<<A.getMot().size()<<endl; 
 }
