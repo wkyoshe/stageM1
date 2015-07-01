@@ -1,6 +1,6 @@
 #  cmake; 
 #
-#  Author(s): Kyoshe Winstone <wkyoshe@gmail.com>
+#  Author(s): Ahmed Bachir <albachirou@gmail.com>
 #       Date: 2015-06-18
 #
 #  Université de Strasbourg.
@@ -19,9 +19,9 @@
 
 
 #set the CMAKE_CXX_COMPILER
-set(CMAKE_CXX_COMPILER /usr/bin/clag++ 3.6.0)
+#set(CMAKE_CXX_COMPILER /usr/bin/clag++ 3.6.0)
 cmake_minimum_required(VERSION 2.8.9 FATAL_ERROR)
-project(operation)
+project(Chaine)
 
 # Create a library called "operationlibo" which includes the source file "operation.cxx".
 # The extension is already found. Any number of sources could be listed here.
@@ -31,14 +31,14 @@ option(USE_SHARED
             
 if(USE_SHARED)
 
-add_library(operationlib SHARED operation.cpp operation.h)  
+add_library(operationlib SHARED Chaine.cpp Chaine.h)  
 # Make sure the compiler can find include files for our operation library
 # when other libraries or executables link to operation
 
 target_include_directories (operationlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 else()
-add_library(operationlib STATIC operation.cpp operation.h)
+add_library(operationlib STATIC Chaine.cpp Chaine.h)
 target_include_directories (operationlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
 # 
@@ -46,14 +46,14 @@ endif()
 # "operation.cxx"". The extensions are automatically found.
 #
 
-add_executable(operation main.cpp)
+add_executable(Chaine main2.cpp)
 
 # Link the executable to the operation library. Since the operation library has
 # public include directories we will use those link directories when building
 # operation
 #
 
-target_link_libraries(operation LINK_PUBLIC operationlib)
+target_link_libraries(Chaine LINK_PUBLIC operationlib)
 
 # add a target to generate API documentation with Doxygen
 option(BUILD_DOCUMENTATION "Use Doxygen to create the HTML based API documentation" ON)
@@ -72,5 +72,3 @@ find_package(Doxygen)
   # IF you do NOT want the documentation to be generated EVERY time you build the project
   # then leave out the 'ALL' keyword from the above command.                
 endif()
-
-
