@@ -9,4 +9,4 @@ Chaine.o: Chaine.cpp
 	g++ -c Chaine.cpp
 
 clean:
-	rm *o Chaine 
+	rm -rf *o Chaine 
