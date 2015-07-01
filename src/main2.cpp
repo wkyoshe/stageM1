@@ -26,19 +26,23 @@ int main(int argc, char **argv){
   */
 
 Chaine A;
-A.setMot(argv[1]);
+
 
 if (argc == 2){
 
-/**
-*Standard output
-*/
-if (A.Estpalindrom() ==0){cout << "Palindrome :false"<<endl;}
-else { cout << "Palindrome :true"<<endl;} 
+
+for(int i=1;i<argc ;i++){
+A.setMot(argv[i]);
+cout <<"Mot :"<<argv[i]<<endl;
+if (A.Estpalindrom() ==0){
+cout << "Palindrome :false"<<endl;
+}
+else { cout << "Palindrome :true"<<endl;}
+
 cout << "le mot ordonne est :" <<A.Tri()<<endl ; 
 cout<<"la longueur du mot est :"<<A.getMot().size()<<endl; 
+cout <<"*************************"<<endl;
 }
-else { cout <<"****Veuillez saisir un  seul mot ****"<<endl;}
 
 return 0;
 
