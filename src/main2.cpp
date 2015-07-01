@@ -22,20 +22,24 @@ using namespace std;
 int main(int argc, char **argv){ 
 
 /**
-  *Creates an object of type "Chaine"
-  */
+*Creates an object of type "Chaine"
+*/
 
 Chaine A;
 
-
-if (argc == 2){
-
+/**
+*Standard output
+*/
 
 for(int i=1;i<argc ;i++){
 A.setMot(argv[i]);
+
 cout <<"Mot :"<<argv[i]<<endl;
+
 if (A.Estpalindrom() ==0){
+  
 cout << "Palindrome :false"<<endl;
+
 }
 else { cout << "Palindrome :true"<<endl;}
 
