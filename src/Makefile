@@ -1,11 +1,11 @@
 all: Chaine 
-operation: main2.o Chaine.o
+Chaine: main2.o Chaine.o
 	g++ main2.o Chaine.o -o Chaine 
 
-main.o: main2.cpp
+main2.o: main2.cpp
 	g++ -c main2.cpp
 
-operation.o: Chaine.cpp
+Chaine.o: Chaine.cpp
 	g++ -c Chaine.cpp
 
 clean:
