@@ -35,3 +35,4 @@ bool Estpalindrom();
 
 
 };
+#endif 
