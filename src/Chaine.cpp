@@ -32,6 +32,7 @@ string Chaine::getMot(){
 
 /**
  *sets the string 
+ *@param mot is the string to be set 
  */
  
 void Chaine::setMot(string mot){
@@ -42,18 +43,13 @@ void Chaine::setMot(string mot){
 /**
  *return true if string is a palindrome  
  */
-
 bool Chaine::Estpalindrom(){
-
-Chaine A ;
-A.setMot(mot);
-string tmp=A.getMot();
-if (tmp==A.Tri())
-{ return true ;}
-
-else {return false;}
-
+if(equal(mot.begin(), mot.end(), mot.rbegin()))
+        	return true  ; 
+	else 
+		return false ; 
 }
+
 
 
 
