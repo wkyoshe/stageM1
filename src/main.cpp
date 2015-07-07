@@ -30,14 +30,15 @@ int main(int argc, char **argv)
     x = atof(argv[1]);
     y = atof(argv[2]);
   }
+
   /**
    *Creates an object of type "operation"
    */
   operation B(x,y);
   
-    /** 
-     *Standard output
-     */ 
+  /** 
+   *Standard output
+   */ 
   cout << B.getX() << "+" << B.getY() << "=" << B.addition() << endl;
   cout << B.getX() << "-" << B.getY() << "=" << B.substruction() << endl;
   cout << B.getX() << "*" << B.getY() << "=" << B.multiplication() << endl;
