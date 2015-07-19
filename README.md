@@ -25,4 +25,5 @@
 |2015-07-08 |[Feelpp-Doxygen](report/dailyReport/2015-07-08.md)  | [feelpp -Doxygen] (report/dailyReport/2015-07-08B.md) |
 |2015-07-09|[Feelpp-Doxygen](report/dailyReport/2015-07-09.md) | [feelpp -Doxygen] (report/dailyReport/2015-07-09B.md)
 |2015-07-13|[Feelpp & Tutorial](report/dailyReport/2015-07-13b.md) | [MainPage-Tuto] (report/dailyReport/2015-07-13.md)|
-|2015-07-13|| [feelpp Tuto] (report/dailyReport/2015-07-15B.md)|
+|2015-07-15|[Feelpp & Tutorial](report/dailyReport/2015-07-15.md)| [feelpp Tuto] (report/dailyReport/2015-07-15B.md)|
+|2015-07-16|[Feelpp & Tutorial](report/dailyReport/2015-07-16.md)|[feelpp Tuto] (report/dailyReport/2015-07-16B.md)|
