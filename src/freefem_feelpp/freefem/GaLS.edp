@@ -1,0 +1,24 @@
+//..
+border bA ( t =0 ,4){ x=t ; y=0; label =1;};
+border bB ( t =0 ,4){ x=4; y=t ; label =2;};
+border bC ( t =4 ,0){ x=t ; y =4; label =3;};
+border bD ( t =4 ,0){ x=0 ; y =t; label =4;};
+mesh Th = buildmesh ( bA ( 10 ) + bB ( 10 ) + bC ( 10 ) + bD(10) ) ; plot ( Th );
+real f , b1, b2, mu, epsilon; 
+f=1;
+b1 =1;
+b2 =1;
+mu =1; 
+epsilon;
+fespace Vh(Th, P1 ) ; Vh u , v ;
+Vh h= hTriangle;
+Vh delta;
+cout<< " size of mesh"<< h[].max<< endl; delta=1/(1/h + epsilon/(h*h));
+problem Problem1(u,v,solver=LU)= int2d(Th)( epsilon*(dx(u)*dx(v) + dy(u)*dy(v)) + b1*dx(u)*v+b2*dy(u)*v + mu*u*v ) - int2d(Th) ( f*v) 
+       + int2d(Th) (delta*(-epsilon*(dxx(u)+dyy(u))+b1*dx(u)+b2*dy(u)+mu*u)*((-epsilon*(dxx(v)+dyy(v))+b1*dx(v)+b2*dy(v)+mu*v)))
+         + int2d(Th) (delta*(-f)*((-epsilon*(dxx(v)+dyy(v))+b1*dx(v)+b2*dy(v)+mu*v)))
+          + on(1,2,3,4,u=0); 
+epsilon =1e-5;
+Problem1;
+plot(u,fill=1,wait=1,value=0) ;
+plot(u,fill=1,wait=1,value=0);
