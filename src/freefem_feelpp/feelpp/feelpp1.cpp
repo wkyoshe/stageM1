@@ -16,11 +16,11 @@ main( int argc, char** argv )
     auto u = Xh->element( "u" );
     auto v = Xh->element( "v" );
     // diffusion coeff.
-    double epsilon = option(_name="epsilon").as<double>();
+    double epsilon = doption(_name="epsilon");
     // reaction coeff.
-    double mu = option(_name="mu").as<double>();
-    auto beta = vec( cst(option(_name="betax").as<double>()),
-                     cst(option(_name="betay").as<double>()) );
+    double mu = doption(_name="epsilon");
+    auto beta = vec( cst(doption(_name="betax")),
+                     cst(doption(_name="betay")) );
     auto f = cst(1.);
     // left hand side
     auto a = form2( _test=Xh, _trial=Xh );
