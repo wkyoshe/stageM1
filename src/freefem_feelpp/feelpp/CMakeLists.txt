@@ -10,7 +10,7 @@ option(USE_SHARED
             
 if(USE_SHARED)
 
-add_library(feelpplib SHARED feelpp1.cpp)  
+add_library(feelpplib SHARED feelpp1.cpp GaLS.cpp)  
 
 target_include_directories (feelpplib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -19,6 +19,6 @@ add_library(feelpplib STATIC feelpp1.cpp )
 target_include_directories (feelpplib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
 
-add_executable(feelpp feelpp1.cpp)
+add_executable(feelpp feelpp1.cpp  GaLS.cpp)
 
 target_link_libraries(feelpp LINK_PUBLIC feelpplib)
