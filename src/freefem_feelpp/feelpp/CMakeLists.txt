@@ -1,24 +1,15 @@
-#set(CMAKE_CXX_COMPILER /usr/bin/clag++ 3.6.0)
-cmake_minimum_required(VERSION 2.8.9 FATAL_ERROR)
-project(feelpp)
-
-# Create a library called "feelpplib" which includes the source file "feelpp.cxx".
-# The extension is already found. Any number of sources could be listed here.
-
-option(USE_SHARED 
-            "use a shared library" OFF)
-            
-if(USE_SHARED)
-
-add_library(feelpplib SHARED feelpp1.cpp GaLS.cpp)  
-
-target_include_directories (feelpplib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-
+#######
+####
+if ( ${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR} )
+cmake_minimum_required(VERSION 2.8)
+find_path(FEELPP_CMAKE_MODULES FindFeel++.cmake PATHS /usr/share/feel/cmake/modules/ /usr/local/share/feel/cmake/modules/ )
+if(FEELPP_CMAKE_MODULES)
+	set(CMAKE_MODULE_PATH ${FEELPP_CMAKE_MODULES})
 else()
-add_library(feelpplib STATIC feelpp1.cpp )
-target_include_directories (feelpplib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+	message(FATAL_ERROR "Feel++ does not seem to have been installed on this platform")
 endif()
-
-add_executable(feelpp feelpp1.cpp  GaLS.cpp)
-
-target_link_libraries(feelpp LINK_PUBLIC feelpplib)
+find_package(Feel++)
+endif()
+set_directory_properties(PROPERTIES EXCLUDE_FROM_ALL TRUE)
+feelpp_add_application(feelpp_advection SRCS feelpp_advection.cpp )
+feelpp_add_application(feelpp_GaLS SRCS feelpp_GaLS.cpp )
