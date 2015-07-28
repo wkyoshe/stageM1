@@ -27,13 +27,13 @@ main( int argc, char** argv )
     auto laplacian_v=laplacian(v);
     // left hand side
     auto a = form2( _test=Xh, _trial=Xh );
-    a += integrate( _range=elements( mesh ),
+    a = integrate( _range=elements( mesh ),
                     _expr=( epsilon*gradt( u )*trans( grad( v ) )
                          + ( gradt( u )*beta )*id(v)
                          + mu*idt( u )*id( v ) ) )    
                          
-                         + integrate( _range=elements( mesh ),
-                           _expr=( delta*(epsilon*(laplacian_u+beta*gradt( u )+ mu*idt( u ) ))*((-epsilon*(laplacian_v+beta*gradt( v )+ mu*idt( v ) ))));
+     a+= integrate( _range=elements( mesh ),
+                    _expr=( delta*(epsilon*(laplacian_u+beta*gradt( u )+ mu*idt( u ) ))*((-epsilon*(laplacian_v+beta*gradt( v )+ mu*idt( v ) ))));
                                                 
     // right hand side
     auto l = form1( _test=Xh );
